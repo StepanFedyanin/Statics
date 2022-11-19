@@ -1,0 +1,13 @@
+.DashboardContent {
+    background: #F6F8FB;
+    width: 87vw;
+    .DashboardContent__container{
+        max-width: 1110px;
+        margin: 0 auto;
+    }
+    .DashboardContent__card {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+}

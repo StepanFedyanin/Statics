@@ -1,0 +1,26 @@
+@use '../../Style/StyleImport.scss' as import;
+.CardInfo {
+    background: #ffffff;
+    box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
+    border-radius: 8px;
+    max-width: 255px;
+    width: 25%;
+    padding: 24px;
+    display: flex;
+    .CardInfo--img {
+        margin-right: 24px;
+    }
+    .CardInfo--content {
+        .CardInfo--content__title {
+            margin-bottom: 4px;
+            .CardInfo--title--text {
+                @include import.styleBold(14px,#25282B);
+            }
+        }
+        .CardInfo--content__meaning {
+            .CardInfo--meaning--text {
+                @include import.styleNormal(18px,#336CFB);
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+@mixin styleBold($fs,$color) {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: $fs;
+    line-height: 1.5;
+    letter-spacing: 0.4px;
+    color: $color;
+}
+@mixin styleNormal($fs,$color) {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: $fs;
+    line-height: 1.5;
+    letter-spacing: 0.4px;
+    color: $color;
+}
+@mixin styleBlack($fs,$color) {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 900;
+    font-size: $fs;
+    line-height: 1.5;
+    letter-spacing: 0.4px;
+    color: $color;
+}
+

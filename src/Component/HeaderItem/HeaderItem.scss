@@ -1,0 +1,24 @@
+@use '../../Style/StyleImport.scss' as import;
+.HeaderItem {
+    padding: 24px 36px;
+    .HeaderItem__container{
+        width: 100%;
+        max-width: 1110px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .HeaderItem--content {
+            display: flex;
+            align-items: center;
+            .HeaderItem--content__notifications {
+                margin-right: 26px;
+            }
+            .HeaderItem--content__person {
+                border: 3px solid #E8E8E8;
+                border-radius: 50%;
+            }
+        }
+    }
+
+}

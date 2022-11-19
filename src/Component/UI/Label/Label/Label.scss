@@ -1,0 +1,10 @@
+@use '../../../../Style/StyleImport.scss' as import;
+.LabelItem{
+    @include import.styleBold(14px,#52575C);
+    &:hover{
+        color: #558EFF;
+    }
+    &::selection{
+        color: #A0A4A8;
+    }
+}
