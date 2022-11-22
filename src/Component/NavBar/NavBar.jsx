@@ -10,65 +10,65 @@ import departments from '../../Resources/departments.svg'
 import patients from '../../Resources/patients.svg'
 import payments from '../../Resources/payments.svg'
 import help from '../../Resources/help.svg'
+import { render } from '@testing-library/react'
 
-function NavBar() {
-    return (
-        <div className='NavBar'>
-            <div className="NavBar--logo">
-                <img src={logo} alt="" />
-            </div>
-            <div className="NavBar--list">
-                <div className="NavBar--list__title">
-                    <h1 className='NavBar--list__titleH1'>MEDICINE</h1>
-                </div>
-                <nav className="NavBar--list--nav">
-                    <ul className='NavBar--nav--item'>
-                        <li className='NavBar--item__block'>
-                            <NavLink className={({ isActive }) => isActive ? 'NavBar--item__active' : 'NavBar--item__link'} to="/dashboard">
-                                <LabelIcon photo={dashboard}>Dashboard</LabelIcon>
-                            </NavLink>
-                        </li>
-                    </ul>
-                    <ul className='NavBar--nav--item'>
-                        <li className='NavBar--item__block'>
-                            <NavLink className={({ isActive }) => isActive ? 'NavBar--item__active' : 'NavBar--item__link'} to="/appointments">
-                                <LabelIcon photo={appointments}>Appointments</LabelIcon>
-                            </NavLink>
-                        </li>
-                    </ul>
+function NavBar({ navBardShow, changeNavBarState }) {
+	const styleShow = ['NavBar']
+	if (navBardShow) {
+		styleShow.push("active");
+	}
+	const changeState = (e) => {
+		e.stopPropagation()
+		changeNavBarState(true)
+	}
+	return (
+		<div className={styleShow.join(' ')} onClick={() => changeNavBarState(false)}>
+			<div className="NavBar__cover" onClick={(e) => changeState(e)}>
 
-                    <ul className='NavBar--nav--item'>
-                        <li className='NavBar--item__block'>
-                            <LabelIcon photo={doctors}>Doctors</LabelIcon>
-                        </li>
-                    </ul>
-
-                    <ul className='NavBar--nav--item'>
-                        <li className='NavBar--item__block' >
-                            <LabelIcon photo={departments}>Departments</LabelIcon>
-                        </li>
-                    </ul>
-
-                    <ul className='NavBar--nav--item'>
-                        <li className='NavBar--item__block'>
-                            <LabelIcon photo={patients}>Patients</LabelIcon>
-                        </li>
-                    </ul>
-
-                    <ul className='NavBar--nav--item'>
-                        <li className='NavBar--item__block'>
-                            <LabelIcon photo={payments}>Payments</LabelIcon>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div className="NavBar--help">
-                <NavLink className={({ isActive }) => isActive ? 'NavBar--item__active' : 'NavBar--item__link'} to="/appointments">
-                    < LabelIcon photo={help}>Help</LabelIcon>
-                </NavLink>
-            </div>
-        </div>
-    )
+			</div>
+			<div className="NavBar__content">
+				<div className="NavBar--logo">
+					<img src={logo} alt="" />
+				</div>
+				<div className="NavBar--list">
+					<div className="NavBar--list__title">
+						<h1 className='NavBar--list__titleH1'>MEDICINE</h1>
+					</div>
+					<nav className="NavBar--list--nav" onClick={(e) => e.stopPropagation()}>
+						<ul className='NavBar--nav--item'>
+							<li className='NavBar--item__block'>
+								<NavLink className={({ isActive }) => isActive ? 'NavBar--item__active' : 'NavBar--item__link'} to="/dashboard">
+									<LabelIcon photo={dashboard}>Dashboard</LabelIcon>
+								</NavLink>
+							</li>
+							<li className='NavBar--item__block'>
+								<NavLink className={({ isActive }) => isActive ? 'NavBar--item__active' : 'NavBar--item__link'} to="/appointments">
+									<LabelIcon photo={appointments}>Appointments</LabelIcon>
+								</NavLink>
+							</li>
+							<li className='NavBar--item__block'>
+								<LabelIcon photo={doctors}>Doctors</LabelIcon>
+							</li>
+							<li className='NavBar--item__block'>
+								<LabelIcon photo={departments}>Departments</LabelIcon>
+							</li>
+							<li className='NavBar--item__block'>
+								<LabelIcon photo={patients}>Patients</LabelIcon>
+							</li>
+							<li className='NavBar--item__block'>
+								<LabelIcon photo={payments}>Payments</LabelIcon>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div className="NavBar--help">
+					<NavLink className={({ isActive }) => isActive ? 'NavBar--item__active' : 'NavBar--item__link'} to="/appointments">
+						< LabelIcon photo={help}>Help</LabelIcon>
+					</NavLink>
+				</div>
+			</div>
+		</div>
+	)
 }
 
 export default NavBar

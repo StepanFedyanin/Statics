@@ -1,42 +1,79 @@
 @use "../../Style/StyleImport.scss" as import;
 .NavBar {
-    max-width: 256px;
-    min-height: 100vh;
-    background: #ffffff;
-    box-shadow: 4px 16px 0px 0px rgba(16, 30, 115, 0.08);
-    box-shadow: 0 0 5px #888;
-    .NavBar--logo {
-        padding: 24px 90px 32px 25px;
-    }
-    .NavBar--help {
-        border-top: 1px solid #e8e8e8;
-        padding: 22px 0px 0px 25px;
-    }
+	max-width: 256px;
+	min-height: 100vh;
+	background: #ffffff;
+	box-shadow: 4px 16px 0px 0px rgba(16, 30, 115, 0.08);
+	box-shadow: 0 0 5px #888;
+	overflow-x: hidden;
+	&.active {
+		.NavBar__cover {
+			display: none;
+		}
+		.NavBar__content {
+			transform: translateX(0%);
+			width: fit-content;
+			transition: all 0.5s;
+			.NavBar--logo {
+				padding: 24px 90px 32px 25px;
+			}
+			.NavBar--help {
+				border-top: 1px solid #e8e8e8;
+				padding: 22px 0px 0px 25px;
+			}
+		}
+	}
+	.NavBar__cover {
+		position: absolute;
+		top: 35%;
+		transform: translate(0, -35%);
+		display: block;
+		width: 25px;
+		height: 25px;
+		background-color: #558eff;
+		border-top-left-radius: 50%;
+		border-top-right-radius: 50%;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 50%;
+	}
+	.NavBar__content {
+		transform: translateX(-100%);
+		transition: all 0.5s;
+		width: 0;
+		.NavBar--logo {
+			padding: 24px 90px 32px 25px;
+		}
+		.NavBar--help {
+			border-top: 1px solid #e8e8e8;
+			padding: 22px 0px 0px 25px;
+		}
+	}
 }
+
 .NavBar--list {
-    padding-left: 25px;
-    .NavBar--list__title {
-        .NavBar--list__titleH1 {
-            @include import.styleNormal(14px, #a0a4a8);
-        }
-    }
-    .NavBar--list--nav {
-        .NavBar--nav--item {
-            .NavBar--item__block {
-                margin: 14px 0;
-                .NavBar--item__active {
-                    @include import.styleNormal(14px, #336CFB);
-                    .LabelIcon{
-                            .LabelIcon--item {
-                                margin: 0 6px;
-                                height: fit-content;
-                                .LabelIcon--label {
-                                    @include import.styleBold(14px,#558EFF);
-                                }
-                            }
-                    }
-                }
-            }
-        }
-    }
+	padding-left: 25px;
+	.NavBar--list__title {
+		.NavBar--list__titleH1 {
+			@include import.styleNormal(14px, #a0a4a8);
+		}
+	}
+	.NavBar--list--nav {
+		.NavBar--nav--item {
+			.NavBar--item__block {
+				margin: 14px 0;
+				.NavBar--item__active {
+					@include import.styleNormal(14px, #336cfb);
+					.LabelIcon {
+						.LabelIcon--item {
+							margin: 0 6px;
+							height: fit-content;
+							.LabelIcon--label {
+								@include import.styleBold(14px, #558eff);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

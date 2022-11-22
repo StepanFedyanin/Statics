@@ -1,24 +1,18 @@
 import React from 'react'
 import Highcharts from 'highcharts'
-import HighchartsReact from 'highcharts-react-official'
+import HighchartsReact from 'highcharts-react-official';
+import './Dashboard.scss'
+// import 'https://code.highcharts.com/css/highcharts.css';
 
-function Dashboard({options}) {
-    // const options = {
-    //     title: {
-    //       text: 'My chart'
-    //     },
-    //     series: [{
-    //       data: [1, 2, 3]
-    //     }]
-    //   }
-  return (
-    <div>
-        <HighchartsReact
-    // highcharts={Highcharts}
-    options={options}
-  />
-    </div>
-  )
+function Dashboard({ options }) {
+	return (
+		<div>
+			<HighchartsReact
+				highcharts={Highcharts}
+				options={options}
+			/>
+		</div >
+	)
 }
 
 export default Dashboard
