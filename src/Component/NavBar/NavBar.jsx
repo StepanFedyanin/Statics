@@ -11,6 +11,8 @@ import patients from '../../Resources/patients.svg'
 import payments from '../../Resources/payments.svg'
 import help from '../../Resources/help.svg'
 import { render } from '@testing-library/react'
+import rigth from '../../Resources/rigth.png'
+import left from '../../Resources/left.png'
 
 function NavBar({ navBardShow, changeNavBarState }) {
 	const styleShow = ['NavBar']
@@ -22,10 +24,7 @@ function NavBar({ navBardShow, changeNavBarState }) {
 		changeNavBarState(true)
 	}
 	return (
-		<div className={styleShow.join(' ')} onClick={() => changeNavBarState(false)}>
-			<div className="NavBar__cover" onClick={(e) => changeState(e)}>
-
-			</div>
+		<div className={styleShow.join(' ')} onClick={() => navBardShow ? changeNavBarState(false) : changeNavBarState(true)}>
 			<div className="NavBar__content">
 				<div className="NavBar--logo">
 					<img src={logo} alt="" />
@@ -38,32 +37,32 @@ function NavBar({ navBardShow, changeNavBarState }) {
 						<ul className='NavBar--nav--item'>
 							<li className='NavBar--item__block'>
 								<NavLink className={({ isActive }) => isActive ? 'NavBar--item__active' : 'NavBar--item__link'} to="/dashboard">
-									<LabelIcon photo={dashboard}>Dashboard</LabelIcon>
+									<LabelIcon navBardShow={navBardShow} photo={dashboard}>Dashboard</LabelIcon>
 								</NavLink>
 							</li>
 							<li className='NavBar--item__block'>
 								<NavLink className={({ isActive }) => isActive ? 'NavBar--item__active' : 'NavBar--item__link'} to="/appointments">
-									<LabelIcon photo={appointments}>Appointments</LabelIcon>
+									<LabelIcon navBardShow={navBardShow} photo={appointments}>Appointments</LabelIcon>
 								</NavLink>
 							</li>
 							<li className='NavBar--item__block'>
-								<LabelIcon photo={doctors}>Doctors</LabelIcon>
+								<LabelIcon navBardShow={navBardShow} photo={doctors}>Doctors</LabelIcon>
 							</li>
 							<li className='NavBar--item__block'>
-								<LabelIcon photo={departments}>Departments</LabelIcon>
+								<LabelIcon navBardShow={navBardShow} photo={departments}>Departments</LabelIcon>
 							</li>
 							<li className='NavBar--item__block'>
-								<LabelIcon photo={patients}>Patients</LabelIcon>
+								<LabelIcon navBardShow={navBardShow} photo={patients}>Patients</LabelIcon>
 							</li>
 							<li className='NavBar--item__block'>
-								<LabelIcon photo={payments}>Payments</LabelIcon>
+								<LabelIcon navBardShow={navBardShow} photo={payments}>Payments</LabelIcon>
 							</li>
 						</ul>
 					</nav>
 				</div>
 				<div className="NavBar--help">
 					<NavLink className={({ isActive }) => isActive ? 'NavBar--item__active' : 'NavBar--item__link'} to="/appointments">
-						< LabelIcon photo={help}>Help</LabelIcon>
+						< LabelIcon navBardShow={navBardShow} photo={help}>Help</LabelIcon>
 					</NavLink>
 				</div>
 			</div>

@@ -1,0 +1,27 @@
+@use "../../Style/StyleImport.scss" as import;
+
+.AppointmentsContent {
+	background: #f6f8fb;
+	width: 100vw;
+	padding-bottom: 75px;
+
+	&.more {
+		width: 100vw;
+		.AppointmentsContent__container {
+			max-width: 1110px;
+			margin: 0 auto;
+			transform: translateX(0%);
+		}
+	}
+	.AppointmentsContent__container {
+		max-width: 1110px;
+		margin: 0 auto;
+		transform: translateX(12%);
+		transition: all 0.4s;
+		&--header {
+			@include import.styleBold(40px, #25282b);
+			max-width: 1110px;
+			margin: 0 auto 24px;
+		}
+	}
+}

@@ -6,16 +6,28 @@
 	box-shadow: 4px 16px 0px 0px rgba(16, 30, 115, 0.08);
 	box-shadow: 0 0 5px #888;
 	overflow-x: hidden;
+	position: fixed;
+	left: 0;
+	z-index: 10;
+	display: flex;
 	&.active {
-		.NavBar__cover {
-			display: none;
-		}
 		.NavBar__content {
-			transform: translateX(0%);
-			width: fit-content;
-			transition: all 0.5s;
+			display: block;
+			width: 256px;
+			transition: width 0.4s;
 			.NavBar--logo {
 				padding: 24px 90px 32px 25px;
+				transform: translateX(0%);
+				transition: all 0.5s;
+			}
+			.NavBar--list {
+				padding-left: 25px;
+				.NavBar--list__title {
+					display: block;
+					.NavBar--list__titleH1 {
+						@include import.styleNormal(14px, #a0a4a8);
+					}
+				}
 			}
 			.NavBar--help {
 				border-top: 1px solid #e8e8e8;
@@ -23,53 +35,43 @@
 			}
 		}
 	}
-	.NavBar__cover {
-		position: absolute;
-		top: 35%;
-		transform: translate(0, -35%);
-		display: block;
-		width: 25px;
-		height: 25px;
-		background-color: #558eff;
-		border-top-left-radius: 50%;
-		border-top-right-radius: 50%;
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 50%;
-	}
+
 	.NavBar__content {
-		transform: translateX(-100%);
-		transition: all 0.5s;
-		width: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 40px;
+		transition: width 0.4s;
 		.NavBar--logo {
-			padding: 24px 90px 32px 25px;
+			// display: none;
+			transform: translateX(-200%);
+			transition: all 0.5s;
+		}
+		.NavBar--list {
+			padding-left: 5px;
+			.NavBar--list__title {
+				display: none;
+			}
 		}
 		.NavBar--help {
 			border-top: 1px solid #e8e8e8;
-			padding: 22px 0px 0px 25px;
+			padding: 5px;
 		}
 	}
 }
 
-.NavBar--list {
-	padding-left: 25px;
-	.NavBar--list__title {
-		.NavBar--list__titleH1 {
-			@include import.styleNormal(14px, #a0a4a8);
-		}
-	}
-	.NavBar--list--nav {
-		.NavBar--nav--item {
-			.NavBar--item__block {
-				margin: 14px 0;
-				.NavBar--item__active {
-					@include import.styleNormal(14px, #336cfb);
-					.LabelIcon {
-						.LabelIcon--item {
-							margin: 0 6px;
-							height: fit-content;
-							.LabelIcon--label {
-								@include import.styleBold(14px, #558eff);
-							}
+.NavBar--list--nav {
+	.NavBar--nav--item {
+		.NavBar--item__block {
+			margin: 14px 0;
+			.NavBar--item__active {
+				@include import.styleNormal(14px, #336cfb);
+				.LabelIcon {
+					.LabelIcon--item {
+						margin: 0 6px;
+						height: fit-content;
+						.LabelIcon--label {
+							@include import.styleBold(14px, #558eff);
 						}
 					}
 				}

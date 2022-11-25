@@ -1,12 +1,22 @@
+@use "../../Style/StyleImport.scss" as import;
+
 .DashboardContent {
 	background: #f6f8fb;
-	width: 87vw;
+	width: 100vw;
+	// display: flex;
+	// justify-content: flex-end;
 	&.more {
-		width: 100vw;
+		.DashboardContent__container {
+			max-width: 1110px;
+			margin: 0 auto;
+			transform: translateX(0%);
+		}
 	}
 	.DashboardContent__container {
 		max-width: 1110px;
 		margin: 0 auto;
+		transform: translateX(12%);
+		transition: all 0.4s;
 		.DashboardContent__card {
 			display: flex;
 			width: 100%;
@@ -27,5 +37,18 @@
 			width: 50%;
 			max-width: 540px;
 		}
+	}
+}
+
+.DashboardContent__table {
+	max-width: 1110px;
+	width: 100%;
+	background: #ffffff;
+	margin: 30px 0;
+	box-shadow: 0px 12px 26px rgb(16 30 115 / 6%);
+	border-radius: 8px;
+	&--header {
+		@include import.styleBold(20px, #25282b);
+		padding: 24px 24px 18px;
 	}
 }
