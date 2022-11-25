@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/Statics/static/css/main.9cf6e247.css",
+    "main.js": "/Statics/static/js/main.1da1dfd0.js",
+    "static/media/rigth.png": "/Statics/static/media/rigth.33eb8884a000aa9cc04c.png",
+    "static/media/left.png": "/Statics/static/media/left.4876b229dbdfc75fca45.png",
+    "static/media/person.svg": "/Statics/static/media/person.47cd93a5bc67f450d966974201aaa52c.svg",
+    "static/media/logo.svg": "/Statics/static/media/logo.975de918958a6fdc3527597926b801b1.svg",
+    "static/media/newpatients-card.svg": "/Statics/static/media/newpatients-card.6333989d7b480c88d73c6bb73164df10.svg",
+    "static/media/doctors.svg": "/Statics/static/media/doctors.c8fc403590a3a865a4e5a4dbbfc4b8d6.svg",
+    "static/media/appointments.svg": "/Statics/static/media/appointments.f63214b1582c6a9c552218eec2a0dbd6.svg",
+    "static/media/departments.svg": "/Statics/static/media/departments.8cbe41aedf110be0a146a4ccf22e91d7.svg",
+    "static/media/hospital-card.svg": "/Statics/static/media/hospital-card.aa047aa723556cfb6e90bc7a777f7c2d.svg",
+    "static/media/operations-card.svg": "/Statics/static/media/operations-card.25fb5dbca66a07e99f556f6f012fdb59.svg",
+    "static/media/write.svg": "/Statics/static/media/write.25666e28d84a52be26c412ccdcbd5844.svg",
+    "static/media/appointments-card.svg": "/Statics/static/media/appointments-card.298bc972a6664f3ab4908f6c427b5184.svg",
+    "static/media/help.svg": "/Statics/static/media/help.937adbaaf1b9f801458639ef305a6227.svg",
+    "static/media/patients.svg": "/Statics/static/media/patients.7eb860eaf202093d30a64d197f6cbf60.svg",
+    "static/media/notification.svg": "/Statics/static/media/notification.e9a5afe25d2db5a3260a04f9777d1951.svg",
+    "static/media/delete.svg": "/Statics/static/media/delete.bdb5cfe344d0c15f046736c6aa6c4def.svg",
+    "static/media/search.svg": "/Statics/static/media/search.a952ad8cc31493ce498ba9e8429497c5.svg",
+    "index.html": "/Statics/index.html",
+    "static/media/payments.svg": "/Statics/static/media/payments.e4c700dc65612a0b3ab2c067f82ba659.svg",
+    "static/media/dashboard.svg": "/Statics/static/media/dashboard.d14e39ea16a54ebd8b56ecf8ae869a0a.svg",
+    "main.9cf6e247.css.map": "/Statics/static/css/main.9cf6e247.css.map",
+    "main.1da1dfd0.js.map": "/Statics/static/js/main.1da1dfd0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9cf6e247.css",
+    "static/js/main.1da1dfd0.js"
+  ]
+}
