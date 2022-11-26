@@ -11,14 +11,12 @@ function AppointmentsContent({ navBardShow }) {
 
 	if (!navBardShow) {
 		styleAppointmentsContent.push('more')
-		console.log(true);
 	}
 	useEffect(() => {
 		getusers();
 	}, [])
 	const getusers = async () => {
 		const response = await PostService.getUsers(10);
-		console.log(await response.data);
 		setUsersList(await response.data);
 		setUsersLoading(true)
 	}
